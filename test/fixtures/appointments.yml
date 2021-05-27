@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  apptdate: 2021-05-26 21:30:01
+  service: MyString
+  dog: one
+  dogwalker: one
+
+two:
+  apptdate: 2021-05-26 21:30:01
+  service: MyString
+  dog: two
+  dogwalker: two
