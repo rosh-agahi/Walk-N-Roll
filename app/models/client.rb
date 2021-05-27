@@ -1,3 +1,3 @@
 class Client < ApplicationRecord
-  belongs_to :businessowner
+  belongs_to :business_owner
 end
