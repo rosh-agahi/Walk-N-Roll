@@ -1,0 +1,2 @@
+class BusinessOwner < ApplicationRecord
+end
