@@ -7,14 +7,15 @@ Rails.application.routes.draw do
   get '/business_owner/login'=> 'sessions#new'
   post '/business_owner/login' => 'sessions#create'
 
+  delete '/business_owner/logout' => 'sessions#destroy'
+
   # get '/clients/login' => 'sessions#new'
   # post '/clients/login' => 'sessions#create'
 
+  resources :business_owners
   resources :appointments
   resources :dogs
   resources :dogwalkers
   resources :clients
-  resources :business_owners
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
