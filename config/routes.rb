@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :services
   get '/' => 'sessions#welcome'
 
   get '/business_owner/signup' => 'business_owners#new'
