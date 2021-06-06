@@ -15,6 +15,7 @@
       <div class="menu_items"><%= link_to "Logout", business_owner_logout_path, method: :delete %></div>
       <div class="menu_items"><%= link_to "Home", business_owner_path(session[:business_owner_id]) %></div>
       <div class="menu_items"><%= link_to "Add Client", new_client_path %></div>
+      <div class="menu_items"><%= link_to "Add Dog", new_dog_path %></div>
       <div class="menu_items"><%= link_to "Add Dog Walker", new_dogwalker_path %></div>
     <% else %>
       <%= link_to "Log In", business_owner_login_path %>

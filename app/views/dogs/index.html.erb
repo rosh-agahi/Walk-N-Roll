@@ -1,0 +1,20 @@
+<h1>All Dogs</h1>
+
+<table>
+  <tr>
+    <th>Dog's Name</th>
+    <th>Dog's Owner</th>
+    <th>Age</th>
+    <th>Breed</th>
+    <th>Favorite Treat</th>
+
+  <% Dog.all.each do |d| %>
+    <% if d.client.business_owner_id == current_business_owner.id %>
+      <tr>
+        <td><%= d.name %> </td>
+        <td><%=d.client.name%> </td>
+        <td><%= d.age %> </td>
+        <td><%= d.breed %> </td>
+        <td><%= d.favorite_treat %> </td>
+    <% end %>
+  <% end %>
