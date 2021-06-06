@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_27_043001) do
+ActiveRecord::Schema.define(version: 2021_06_06_001126) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "apptdate"
@@ -34,8 +34,6 @@ ActiveRecord::Schema.define(version: 2021_05_27_043001) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
-    t.string "username"
-    t.string "password_digest"
     t.integer "phonenumber"
     t.string "address"
     t.integer "business_owner_id"
