@@ -1,0 +1,14 @@
+<h1>My Services</h1>
+
+<table>
+  <% current_business_owner.services.each do |s| %>
+    <tr class="services">
+      <% if logged_in? %>
+        <td><%= link_to "X", "/services/#{s.id}", method: :delete, :class => "delete_button" %></td>
+      <% end %>
+
+      <td><%= s.description %></td>
+      <td><%= s.display_price %></td>
+    </tr>
+  <% end %>
+</table>

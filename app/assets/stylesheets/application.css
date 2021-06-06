@@ -77,6 +77,15 @@
    line-height: 40px;
  }
 
+ a.delete_button {
+   background-color: red;
+   font-family: sans-serif;
+   padding: 8px;
+   border-radius: 15%;
+   font-weight: normal;
+   text-align: center;
+ }
+
  body {
    font-family: serif;
  }
@@ -88,6 +97,10 @@
 
  td {
    padding: 5px;
+ }
+
+ tr.services {
+   line-height: 30px;
  }
 
 ul {
