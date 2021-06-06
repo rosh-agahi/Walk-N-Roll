@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_06_023407) do
+ActiveRecord::Schema.define(version: 2021_06_06_151458) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "apptdate"
@@ -59,6 +59,12 @@ ActiveRecord::Schema.define(version: 2021_06_06_023407) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.index ["business_owner_id"], name: "index_dogwalkers_on_business_owner_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "description"
+    t.float "price"
+    t.integer "business_owner_id"
   end
 
   add_foreign_key "appointments", "dogs"
