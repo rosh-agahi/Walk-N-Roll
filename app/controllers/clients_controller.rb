@@ -10,7 +10,8 @@ class ClientsController < ApplicationController
     @client.business_owner_id = session[:business_owner_id]
 
     if @client.save
-      redirect_to business_owner_path(session[:business_owner_id])
+      flash[:notice] = "#{@client.name} was added as a new client."
+      redirect_to new_client_path
     else
       render :new
     end
