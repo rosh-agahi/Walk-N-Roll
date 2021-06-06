@@ -1,7 +1,18 @@
 <h1>My Dog Walkers</h1>
 
-<ul>
+<div>
+  <%= link_to "Add Dog Walkers", new_dogwalker_path, :class=> "link_button" %>
+</div>
+
+<table>
   <% current_business_owner.dogwalkers.each do |w| %>
-    <li><%= w.name %></li>
+    <% if w.name !="Not Assigned" %>
+    <tr class="services">
+      <% if logged_in? %>
+        <td><%= link_to "X", "/dogwalkers/#{w.id}", method: :delete, :class => "delete_button" %></td>
+      <% end %>
+        <td><%= w.name %></td>
+      </tr>
+    <% end %>
   <% end %>
-</ul>
+</table>
