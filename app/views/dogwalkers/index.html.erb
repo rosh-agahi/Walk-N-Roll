@@ -1,0 +1,7 @@
+<h1>My Dog Walkers</h1>
+
+<ul>
+  <% current_business_owner.dogwalkers.each do |w| %>
+    <li><%= w.name %></li>
+  <% end %>
+</ul>
