@@ -14,9 +14,9 @@
   <br>
   <br>
 
-  <p>Select the Dog Walker that this appointment is assigned to:</p>
+  <p>Assign a Dog Walker:</p>
 
-  <%= f.collection_select :dogwalker_id, @dogwalkers, :id, :name, include_blank:  "Assign walker later" %>
+  <%= f.collection_select :dogwalker_id, @dogwalkers, :id, :name, value: Dogwalker.find_by_name("Not Assigned"), required: true %>
   <br>
   <br>
 
