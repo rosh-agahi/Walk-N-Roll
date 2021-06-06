@@ -2,15 +2,15 @@
 
 <%= form_for(@appointment) do |f| %>
   <div>Appointment Date and Time</div>
-  <%= f.datetime_local_field :apptdate %>
+  <%= f.datetime_local_field :apptdate, required: true%>
   <br>
   <br>
   <%= f.label :service %>
-  <%= f.collection_select :service_id, @services, :id, :drop_down_display %>
+  <%= f.collection_select :service_id, @services, :id, :drop_down_display, required: true %>
 
   <p>Select the Dog that this appointment is for:</p>
 
-  <%= f.collection_select :dog_id, @dogs, :id, :name %>
+  <%= f.collection_select :dog_id, @dogs, :id, :name_with_client, {prompt: "Please select a dog"}, required: true %>
   <br>
   <br>
 
