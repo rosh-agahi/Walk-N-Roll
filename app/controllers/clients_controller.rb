@@ -7,12 +7,13 @@ class ClientsController < ApplicationController
   def create
 
     @client = Client.new(client_params)
-    @client.business_owner_id = helpers.current_business_owner
+    @client.business_owner_id = helpers.current_business_owner.id
 
     if @client.save
       flash[:notice] = "#{@client.name} was added as a new client."
       redirect_to new_client_path
     else
+      flash[:notice] = "please try again"
       render :new
     end
   end
