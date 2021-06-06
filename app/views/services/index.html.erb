@@ -1,5 +1,9 @@
 <h1>My Services</h1>
 
+<div>
+  <%= link_to "Add Service", new_service_path, :class=> "link_button" %>
+</div>
+
 <table>
   <% current_business_owner.services.each do |s| %>
     <tr class="services">
@@ -8,7 +12,7 @@
       <% end %>
 
       <td><%= s.description %></td>
-      <td><%= s.display_price %></td>
+      <td style='text-align: right'><%= s.display_price %></td>
     </tr>
   <% end %>
 </table>
