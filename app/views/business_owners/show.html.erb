@@ -1,1 +1,9 @@
-Welcome, <%= @business_owner.name %>
+<h2>Welcome, <%= @business_owner.name %></h2>
+
+<div>
+  <%= link_to "Add Client", new_client_path %>
+</div>
+
+<div>
+  <%= link_to "View Clients", clients_path %>
+</div>
