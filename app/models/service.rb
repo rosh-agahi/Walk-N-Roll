@@ -4,4 +4,8 @@ class Service < ApplicationRecord
   def display_price
     "$#{sprintf('%.2f',price)}"
   end
+
+  def drop_down_display
+    "#{description}, #{display_price}"
+  end 
 end

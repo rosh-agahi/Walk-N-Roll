@@ -4,7 +4,7 @@ class AppointmentsController < ApplicationController
     @clients = helpers.current_business_owner.clients.all
     @dogs = Dog.all.select { |d| d.client.business_owner_id == helpers.current_business_owner.id}
     @dogwalkers = helpers.current_business_owner.dogwalkers.all
-    @services = ["30 Minute Walk", "1 Hour Walk", "Overnight", "Include Vet Checkup"]
+    @services = helpers.current_business_owner.services.all
     @appointment = Appointment.new
   end
 
@@ -24,7 +24,7 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:apptdate, :service, :dog_id, :dogwalker_id)
+    params.require(:appointment).permit(:apptdate, :service_id, :dog_id, :dogwalker_id)
   end
 
 end
