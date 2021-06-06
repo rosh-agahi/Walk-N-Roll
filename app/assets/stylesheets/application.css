@@ -13,3 +13,64 @@
  *= require_tree .
  *= require_self
  */
+
+ /* h1.name {
+   font-family: 'Kaushan Script';
+   font-size: 50px;
+ } */
+
+ /* img.headerimage {
+   max-width: 70%;
+   max-height: 180px;
+ } */
+
+ /* .container {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ .container2 {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: stretch;
+ } */
+
+ nav.menu_bar {
+   display: flex;
+   flex-direction: row;
+   justify-content: left;
+   padding: 5px;
+   background-color: darkseagreen;
+   color: #000000;
+ }
+
+ div.menu_items {
+   padding-right: 3%;
+   letter-spacing: 2px;
+ }
+
+ a {
+   font-family: inherit;
+   color: white;
+   text-decoration: none;
+   font-size: 15px;
+   font-weight: bold;
+   letter-spacing: 2px;
+   text-transform:uppercase;
+ }
+
+ a.link_button {
+   font-family: inherit;
+   text-decoration: none;
+   font-size: 15px;
+   background-color: black;
+   padding: 6px;
+   line-height: 40px;
+ }
+
+ body {
+   font-family: serif;
+ }

@@ -1,7 +1,7 @@
 <h1>My Clients</h1>
-<ul>
-<% current_business_owner.clients.each do |c| %>
-  <li><%= c.name %></li>
 
-<% end %>
+<ul>
+  <% current_business_owner.clients.each do |c| %>
+    <li><%= c.name %></li>
+  <% end %>
 </ul>
