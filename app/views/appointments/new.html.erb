@@ -1,0 +1,24 @@
+<h1>Add a New Appointment</h1>
+
+<%= form_for(@appointment) do |f| %>
+  <%= f.label :apptdate %>
+  <%= f.datetime_local_field :apptdate %>
+  <br>
+  <br>
+  <%= f.label :service %>
+  <%# <%= f.select :service, @services %> %>
+
+  <p>Select the Dog that this appointment is for:</p>
+
+  <%= f.collection_select :dog_id, @dogs, :id, :name_with_client %>
+  <br>
+  <br>
+
+  <p>Select the Dog Walker that this appointment is assigned to:</p>
+
+  <%= f.collection_select :dogwalker_id, @dogwalkers, :id, :name, include_blank:  "Assign walker later" %>
+  <br>
+  <br>
+
+  <%= f.submit "Add Appointment" %>
+<% end %>
