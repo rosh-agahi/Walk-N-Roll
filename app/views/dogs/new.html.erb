@@ -1,0 +1,21 @@
+<h1>Add a New Dog</h1>
+
+<%= form_for(@dog) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :breed %>
+  <%= f.text_field :breed %>
+
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+
+  <%= f.label :favorite_treat %>
+  <%= f.text_field :favorite_treat %>
+
+  <p>Select the Client that this dog belongs to:</p>
+
+  <%= f.collection_select :client_id, current_business_owner.clients.all, :id, :name %>
+
+  <%= f.submit "Add Dog" %>
+<% end %>
