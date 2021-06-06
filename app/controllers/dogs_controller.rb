@@ -1,11 +1,11 @@
 class DogsController < ApplicationController
 
   def new
+    @clients = helpers.current_business_owner.clients.all
     @dog = Dog.new
   end
 
   def create
-
     @dog = Dog.new(dog_params)
     if @dog.save
       flash[:notice] = "#{@dog.name} was added as a new dog for #{@dog.client.name}."

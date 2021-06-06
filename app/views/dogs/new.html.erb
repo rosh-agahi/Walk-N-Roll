@@ -15,7 +15,8 @@
 
   <p>Select the Client that this dog belongs to:</p>
 
-  <%= f.collection_select :client_id, current_business_owner.clients.all, :id, :name %>
-
+  <%= f.collection_select :client_id, @clients, :id, :name %>
+  <br>
+  <br>
   <%= f.submit "Add Dog" %>
 <% end %>

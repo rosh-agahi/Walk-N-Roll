@@ -7,7 +7,7 @@ class ClientsController < ApplicationController
   def create
 
     @client = Client.new(client_params)
-    @client.business_owner_id = session[:business_owner_id]
+    @client.business_owner_id = helpers.current_business_owner
 
     if @client.save
       flash[:notice] = "#{@client.name} was added as a new client."
@@ -15,6 +15,11 @@ class ClientsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def showdogs
+    @client = Client.find_by_id(params[:id])
+    render :showdogs
   end
 
   private

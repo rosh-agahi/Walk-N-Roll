@@ -2,6 +2,6 @@
 
 <ul>
   <% current_business_owner.clients.each do |c| %>
-    <li><%= c.name %></li>
+    <li> <%= link_to c.name, "/clients/#{c.id}/dogs", :class => "link_button" %></li>
   <% end %>
 </ul>

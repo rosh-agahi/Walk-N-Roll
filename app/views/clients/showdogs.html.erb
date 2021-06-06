@@ -1,0 +1,13 @@
+<h1> <%= @client.name %>'s Dogs </h1>
+
+Book an appointment for:
+
+<% if @client.dogs.count < 1 %>
+  <p>Ruh, roh... Looks like <%= @client.name %> doesn't have any dogs yet. Add a dog for them to see them appear in this list. </p>
+<% else %>
+  <ul>
+    <% @client.dogs.each do |d| %>
+      <li><%= d.name %></li>
+    <% end %>
+  </ul>
+<% end %>

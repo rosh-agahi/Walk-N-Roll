@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/business_owner/login'=> 'sessions#new'
   post '/business_owner/login' => 'sessions#create'
 
+  get '/clients/:id/dogs' => 'clients#showdogs'
+
   delete '/business_owner/logout' => 'sessions#destroy'
 
   # get '/clients/login' => 'sessions#new'
