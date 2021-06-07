@@ -9,6 +9,7 @@
     <tr class="services">
       <% if logged_in? %>
         <td><%= link_to "X", "/services/#{s.id}", method: :delete, :class => "delete_button" %></td>
+        <td><%= link_to "Edit", edit_service_path(s), :class => "edit_button" %></td>
       <% end %>
 
       <td><%= s.description %></td>

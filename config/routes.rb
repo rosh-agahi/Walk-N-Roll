@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get '/clients/:id/dogs' => 'clients#showdogs'
 
   get '/appointments/:id/edit' => 'appointments#edit', as: :edit_appointment
-
   delete '/business_owner/logout' => 'sessions#destroy'
 
   delete '/services/:id/delete' => 'services#destroy'

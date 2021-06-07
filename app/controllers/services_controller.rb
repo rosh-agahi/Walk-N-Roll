@@ -20,6 +20,17 @@ class ServicesController < ApplicationController
     end
   end
 
+  def edit
+    @service = Service.find_by_id(params[:id])
+  end
+
+  def update
+    @service = Service.find_by_id(params[:id])
+    @service.update(description: params[:service][:description],price: params[:service][:price])
+    redirect_to services_path
+  end
+
+
   private
 
   def service_params

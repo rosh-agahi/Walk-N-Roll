@@ -1,0 +1,12 @@
+<h1>Edit Service: <%= @service.description %></h1>
+
+<%= form_for @service do |f| %>
+
+<p>Change service description:</p>
+<%= f.text_field :description %>
+
+<p>Change service price:</p>
+<%= f.text_field :price, required: true %>
+
+<%= f.submit "Update" %>
+<% end %>
