@@ -1,0 +1,22 @@
+<h1>Edit Appointment</h1>
+
+<table>
+  <tr>
+    <th>Appointment</th>
+    <th>Client</th>
+    <th>Dog</th>
+    <th>Service</th>
+  </tr>
+  <tr>
+    <td><%= @appointment.display_datetime %></td>
+    <td><%= @appointment.dog.client.name %></td>
+    <td><%= @appointment.dog.name %></td>
+    <td><%= @appointment.service.description %></td>
+  </tr>
+</table>
+
+<p>Assign a dog walker:</p>
+<%= form_for @appointment do |f| %>
+<%= f.collection_select :dogwalker_id, @dogwalkers, :id, :name, required: true %>
+<%= f.submit "Update" %>
+<% end %>

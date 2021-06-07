@@ -27,6 +27,18 @@ class AppointmentsController < ApplicationController
     redirect_to '/appointments'
   end
 
+  def edit
+    @appointment = Appointment.find_by_id(params[:id])
+    @cbo = helpers.current_business_owner
+    @dogwalkers = @cbo.dogwalkers.all
+
+  end
+
+  def update
+    @appointment = Appointment.find_by_id(params[:id])
+    @appointment.update(dogwalker_id: params[:appointment][:dogwalker_id])
+    redirect_to appointments_path
+  end
 
   private
 

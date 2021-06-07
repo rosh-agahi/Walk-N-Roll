@@ -85,6 +85,14 @@
    font-weight: normal;
    text-align: center;
  }
+ a.edit_button {
+   background-color: blue;
+   font-family: sans-serif;
+   padding: 8px;
+   border-radius: 15%;
+   font-weight: normal;
+   text-align: center;
+ }
 
  body {
    font-family: serif;

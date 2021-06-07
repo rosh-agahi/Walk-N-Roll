@@ -1,17 +1,22 @@
 <h1>All Appointments</h1>
 
-
+<div>
+  <%= link_to "Add Appointments", new_appointment_path, :class=> "link_button" %>
+</div>
 
 <table>
-  <% Appointment.all.each do |a| %>
+  <% Appointment.all.sort_by{|x| x.apptdate}.each do |a| %>
   <tr>
     <% if logged_in? %>
       <td><%= link_to "Cancel", "/appointments/#{a.id}", method: :delete, :class => "delete_button" %></td>
+      <td><%= link_to "Edit", edit_appointment_path(a), :class => "edit_button" %></td>
     <% end %>
     <td><%= a.display_datetime %></td>
     <td><%= a.dog.name %></td>
     <td><%= a.dog.client.name %></td>
-    <td><%= a.dogwalker.name %></td>
+    <td>
+        <%= a.dogwalker.name %>
+    </td>
     <td><%= a.service.description %></td>
   </tr>
   <% end %>
