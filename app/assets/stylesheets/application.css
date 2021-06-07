@@ -38,13 +38,14 @@
    align-items: stretch;
  } */
 
- nav.menu_bar {
+ nav.menu_panel {
    display: flex;
    flex-direction: row;
    justify-content: left;
    padding: 5px;
    background-color: darkseagreen;
    color: #000000;
+   font-family: 'Coiny', sans-serif;
  }
 
  div.menu_items {
@@ -53,13 +54,34 @@
  }
 
  a {
-   font-family: inherit;
    color: white;
    text-decoration: none;
    font-size: 15px;
    font-weight: bold;
    letter-spacing: 2px;
    text-transform:uppercase;
+ }
+
+ div.top_header {
+   background:
+   linear-gradient(
+     rgba(30, 139, 195, 0.55),
+     rgba(30, 139, 195, 0.55)
+     ),
+    url("https://cdn.kinsights.com/cache/2a/7e/2a7e168b69bef23d6eecea9695467ac3.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center bottom;
+   height: 300px;
+ }
+
+ div.title {
+   font-family: 'Coiny', sans-serif;
+   color: white;
+   font-size: 200%;
+   line-height: 30px;
+   padding-left: 3%;
+   padding-top: 10%;
  }
 
  div.owner_homepage_links {
@@ -69,7 +91,6 @@
    padding: 5px;
  }
  a.link_button {
-   font-family: inherit;
    text-decoration: none;
    font-size: 15px;
    background-color: deepskyblue;
@@ -79,7 +100,6 @@
 
  a.delete_button {
    background-color: red;
-   font-family: sans-serif;
    padding: 8px;
    border-radius: 15%;
    font-weight: normal;
@@ -87,7 +107,6 @@
  }
  a.edit_button {
    background-color: blue;
-   font-family: sans-serif;
    padding: 8px;
    border-radius: 15%;
    font-weight: normal;
@@ -95,7 +114,7 @@
  }
 
  body {
-   font-family: serif;
+   font-family: 'Trebuchet MS', sans-serif;
  }
 
  th {

@@ -8,7 +8,16 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+   </head>
+
+  <div class="top_header">
+    <div class="title">
+      <p>Get ready to </p>
+      <h1>    Walk n Roll!</h1>
+    </div>
+  </div>
 
   <nav class="menu_bar">
     <% if logged_in? %>
@@ -21,7 +30,7 @@
       <div class="menu_items"><%= link_to "Manage Services", services_path %></div>
 
     <% else %>
-      <%= link_to "Log In", business_owner_login_path %>
+      <%= link_to "Businesss Owner Log In", business_owner_login_path %>
     <% end %>
   </nav>
 
