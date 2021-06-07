@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   delete '/business_owner/logout' => 'sessions#destroy'
 
   delete '/services/:id/delete' => 'services#destroy'
+  delete '/appointments/:id/delete' => 'appointments#destroy'
 
   # get '/clients/login' => 'sessions#new'
   # post '/clients/login' => 'sessions#create'

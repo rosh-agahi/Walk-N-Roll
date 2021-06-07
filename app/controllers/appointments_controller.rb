@@ -22,6 +22,11 @@ class AppointmentsController < ApplicationController
 
   end
 
+  def destroy
+    Appointment.find_by_id(params[:id]).destroy
+    redirect_to '/appointments'
+  end
+
 
   private
 

@@ -1,16 +1,18 @@
 <h1>All Appointments</h1>
 
+
+
 <table>
   <% Appointment.all.each do |a| %>
   <tr>
-    <td>Delete button</td>
+    <% if logged_in? %>
+      <td><%= link_to "Cancel", "/appointments/#{a.id}", method: :delete, :class => "delete_button" %></td>
+    <% end %>
     <td><%= a.display_datetime %></td>
     <td><%= a.dog.name %></td>
     <td><%= a.dog.client.name %></td>
     <td><%= a.dogwalker.name %></td>
     <td><%= a.service.description %></td>
-
-
   </tr>
   <% end %>
 </table>
