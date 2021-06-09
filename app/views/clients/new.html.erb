@@ -1,14 +1,14 @@
 <h1>Add a New Client</h1>
 
 <%= form_for(@client) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <div class="form_item"><%= f.label :name %></div>
+  <div class="form_item"><%= f.text_field :name, :class=>"text" %></div>
+  <br>
+  <div class="form_item"><%= f.label :phonenumber, "Phone Number" %></div>
+  <div class="form_item"><%= f.text_field :phonenumber, :class=>"text" %></div>
+  <br>
+  <div class="form_item"><%= f.label :address %></div>
+  <div class="form_item"><%= f.text_field :address, :class=>"text" %></div>
 
-  <%= f.label :phonenumber, "Phone Number" %>
-  <%= f.text_field :phonenumber %>
-
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-
-  <%= f.submit "Add Client" %>
+  <div class="form_item"><%= f.submit "Add Client", :class=>"submit" %></div>
 <% end %>
