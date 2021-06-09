@@ -6,8 +6,12 @@ class BusinessOwnersController < ApplicationController
 
   def create
     @business_owner = BusinessOwner.new(user_params)
+
     if @business_owner.save
       session[:business_owner_id] = @business_owner.id
+
+      Dogwalker.create(:name => "Not Assigned", :business_owner_id => @business_owner.id)
+      Dogwalker.create(:name => "#{@business_owner.name} (myself)", :business_owner_id => @business_owner.id)
       redirect_to business_owner_path(@business_owner)
     else
       render :new
