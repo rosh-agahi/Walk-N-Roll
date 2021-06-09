@@ -11,7 +11,7 @@
       <% if logged_in? %>
         <td><%= link_to "X", "/dogwalkers/#{w.id}", method: :delete, :class => "delete_button" %></td>
       <% end %>
-        <td><%= w.name %></td>
+        <td><%= link_to w.name, dogwalker_path(w), :class => "table_button" %></td>
       </tr>
     <% end %>
   <% end %>

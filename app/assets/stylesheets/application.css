@@ -97,6 +97,7 @@
    justify-content: left;
    padding: 5px;
  }
+
  a.link_button {
    text-decoration: none;
    font-size: 15px;
@@ -118,6 +119,15 @@
    border-radius: 15%;
    font-weight: normal;
    text-align: center;
+ }
+
+ .table_button{
+   text-decoration: none;
+   font-size: 15px;
+   color: black;
+   font-weight: bold;
+   padding: 6px;
+   line-height: 20px;
  }
 
  body {

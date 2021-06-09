@@ -22,6 +22,10 @@ class DogwalkersController < ApplicationController
     end
   end
 
+  def show
+    @dogwalker = Dogwalker.find_by_id(params[:id])
+  end
+
   private
 
   def dogwalker_params

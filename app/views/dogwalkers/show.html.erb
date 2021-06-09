@@ -1,0 +1,24 @@
+<h1> Dog Walker: <%= @dogwalker.name %> </h1>
+
+
+<p><strong>Count of appointments:</strong> <%= @dogwalker.appointments.count %> </p>
+
+
+<p><%= @dogwalker.name %>'s appointment schedule:</p>
+
+  <table>
+    <tr>
+      <th>Appointment Date & Time</th>
+      <th>Dog Name</th>
+      <th>Dog's Owner</th>
+      <th>Service</th>
+    </tr>
+    <% @dogwalker.appointments.sort.each do |a| %>
+      <tr>
+        <td><%= a.display_datetime %></td>
+        <td><%= a.dog.name %></td>
+        <td><%= link_to a.dog.client.name, client_path(a.dog.client), :class => "table_button" %></td>
+        <td><%= a.service.description %></td>
+      </tr>
+    <% end %>
+  </table>
