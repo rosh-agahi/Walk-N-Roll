@@ -1,19 +1,25 @@
 <h2>Welcome, <%= @business_owner.name %></h2>
 
+<div class="home_tile_container">
 
-  <div>
-    <%= link_to "View Clients", clients_path, :class=> "link_button" %>
-  </div>
+<div class="home_tile">
+  <p>Clients</p>
+  <p class="kpi"><%= @business_owner.clients.count %></p>
+</div>
 
-  <div>
-    <%= link_to "View Dogs", dogs_path, :class=> "link_button" %>
-  </div>
+<div class="home_tile">
+  <p>Dog Walkers</p>
+  <p class="kpi"><%= @business_owner.dogwalkers.count-1 %></p>
+</div>
 
+<div class="home_tile">
+  <p>Appointments Booked</p>
+  <p class="kpi"><%= @business_owner.appointments.count %></p>
+</div>
 
-  <div>
-    <%= link_to "View Dog Walkers", dogwalkers_path, :class=> "link_button" %>
-  </div>
+<div class="home_tile">
+  <p>Revenue</p>
+  <p class="kpi"><%= @business_owner.revenue %></p>
+</div>
 
-  <div>
-    <%= link_to "View Appointments", appointments_path, :class=> "link_button" %>
-  </div>
+</div>
