@@ -1,10 +1,16 @@
 <h1> Dog Walker: <%= @dogwalker.name %> </h1>
 
 
+
+<div class="container">
+<div>
+  <%= link_to "Delete Dog Walker", "/dogwalkers/#{@dogwalker.id}", method: :delete, :class=>"nav_pills_red link_button" %>
+</div>
+</div>
+
+
 <p><strong>Count of appointments:</strong> <%= @dogwalker.appointments.count %> </p>
 
-
-<p><%= @dogwalker.name %>'s appointment schedule:</p>
 
   <table>
     <tr>

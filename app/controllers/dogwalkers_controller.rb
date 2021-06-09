@@ -5,7 +5,13 @@ class DogwalkersController < ApplicationController
   end
 
   def destroy
-    Dogwalker.find_by_id(params[:id]).destroy
+    @dogwalker = Dogwalker.find_by_id(params[:id])
+    @dogwalker.appointments.each do |a|
+      a.dogwalker_id = Dogwalker.find_by(name: "Not Assigned").id 
+      a.save
+    end
+
+    @dogwalker.destroy
     redirect_to '/dogwalkers'
   end
 

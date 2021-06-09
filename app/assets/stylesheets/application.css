@@ -101,7 +101,6 @@
  a.link_button {
    text-decoration: none;
    font-size: 15px;
-   background-color: #8FBC8F;
    font-family: 'Coiny', sans-serif;
    padding: 10px 20px;
    border-radius: 25px;
@@ -190,4 +189,10 @@ p.kpi {
 
 .nav_pills {
   margin-right: 10px;
+  background-color: #8FBC8F;
+}
+
+.nav_pills_red {
+  margin-right: 10px;
+  background-color: #FA8072;
 }
