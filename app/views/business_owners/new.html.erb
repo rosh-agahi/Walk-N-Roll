@@ -1,18 +1,30 @@
 <h1>Sign Up!</h1>
 <p>Business owners can sign up here.</p>
 
-<%= form_for(@business_owner) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="center_form">
+  <%= form_for(@business_owner) do |f| %>
 
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+    <div class="form_item"><%= f.label :name %></div>
+    <div class="form_item"><%= f.text_field :name, :class=>"text" %></div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+    <br>
 
-  <%= f.label :business_join_code %>
-  <%= f.text_field :business_join_code %>
+    <div class="form_item"><%= f.label :username %></div>
+    <div class="form_item"><%= f.text_field :username, :class=>"text" %></div>
 
-  <%= f.submit "Sign Up" %>
-<% end %>
+    <br>
+
+    <div class="form_item"><%= f.label :password %></div>
+    <div class="form_item"><%= f.password_field :password, :class=>"text" %></div>
+
+    <br>
+
+    <div class="form_item"><%= f.label :business_join_code %></div>
+    <div class="form_item"><%= f.text_field :business_join_code, :class=>"text" %></div>
+
+    <br>
+
+    <div class="form_item"><%= f.submit "Sign Up", :class=>"submit" %></div>
+
+  <% end %>
+</div>
