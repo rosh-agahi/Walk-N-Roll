@@ -1,22 +1,22 @@
 <h1>Add a New Dog</h1>
 
 <%= form_for(@dog) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <div class="form_item"><%= f.label :name %></div>
+  <div class="form_item"><%= f.text_field :name, :class=>"text" %></div>
 
-  <%= f.label :breed %>
-  <%= f.text_field :breed %>
+  <div class="form_item"><%= f.label :breed %></div>
+  <div class="form_item"><%= f.text_field :breed, :class=>"text" %></div>
 
-  <%= f.label :age %>
-  <%= f.text_field :age %>
+  <div class="form_item"><%= f.label :age %></div>
+  <div class="form_item"><%= f.text_field :age, :class=>"text" %></div>
 
-  <%= f.label :favorite_treat %>
-  <%= f.text_field :favorite_treat %>
+  <div class="form_item"><%= f.label :favorite_treat %></div>
+  <div class="form_item"><%= f.text_field :favorite_treat, :class=>"text" %></div>
 
   <p>Select the Client that this dog belongs to:</p>
 
   <%= f.collection_select :client_id, @clients, :id, :name %>
   <br>
   <br>
-  <%= f.submit "Add Dog" %>
+  <%= f.submit "Add Dog", :class=>"submit"%>
 <% end %>
