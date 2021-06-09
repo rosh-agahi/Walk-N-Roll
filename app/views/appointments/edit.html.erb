@@ -15,8 +15,10 @@
   </tr>
 </table>
 
+<br>
+
 <p>Assign a dog walker:</p>
 <%= form_for @appointment do |f| %>
-<%= f.collection_select :dogwalker_id, @dogwalkers, :id, :name, required: true %>
-<%= f.submit "Update" %>
+<div class="form_item"><%= f.collection_select :dogwalker_id, @dogwalkers, :id, :name, required: true %></div>
+<div class="form_item"><%= f.submit "Update", :class=>"submit" %></div>
 <% end %>
