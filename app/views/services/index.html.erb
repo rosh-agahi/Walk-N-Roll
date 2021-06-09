@@ -1,19 +1,26 @@
 <h1>My Services</h1>
 
 <div>
-  <%= link_to "Add Service", new_service_path, :class=> "link_button" %>
+  <%= link_to "Add Service", new_service_path, :class=> "nav_pills link_button" %>
 </div>
 
+<br>
+
 <table>
+  <tr>
+    <th>Description</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+  </tr>
   <% current_business_owner.services.each do |s| %>
-    <tr class="services">
+    <tr>
+      <td><%= s.description %></td>
+      <td class="table_number"><%= s.display_price %></td>
       <% if logged_in? %>
-        <td><%= link_to "X", "/services/#{s.id}", method: :delete, :class => "delete_button" %></td>
+        <td><%= link_to "Delete", "/services/#{s.id}", method: :delete, :class => "delete_button" %></td>
         <td><%= link_to "Edit", edit_service_path(s), :class => "edit_button" %></td>
       <% end %>
-
-      <td><%= s.description %></td>
-      <td style='text-align: right'><%= s.display_price %></td>
     </tr>
   <% end %>
 </table>
