@@ -18,9 +18,8 @@ class ClientsController < ApplicationController
     end
   end
 
-  def showdogs
+  def show
     @client = Client.find_by_id(params[:id])
-    render :showdogs
   end
 
   private

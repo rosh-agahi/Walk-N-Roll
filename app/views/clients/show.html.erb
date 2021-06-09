@@ -1,1 +1,20 @@
-This is the new client
+<h1> Client: <%= @client.name %> </h1>
+
+<p><strong>Phone Number:</strong> <%=@client.phonenumber_display %></p>
+<p><strong>Address:</strong> <%=@client.address %></p>
+
+<p><%= @client.name %>'s dogs:</p>
+
+<% if @client.dogs.count < 1 %>
+  <p>Ruh, roh... Looks like <%= @client.name %> doesn't have any dogs yet. Add a dog for them to see them appear in this list. </p>
+<% else %>
+  <ul>
+    <% @client.dogs.each do |d| %>
+      <li><%= d.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div>
+  <%= link_to "Add Dogs", new_dog_path, :class=> "link_button" %>
+</div>

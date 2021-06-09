@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   get '/business_owner/login'=> 'sessions#new'
   post '/business_owner/login' => 'sessions#create'
 
-  get '/clients/:id/dogs' => 'clients#showdogs'
-
   get '/appointments/:id/edit' => 'appointments#edit', as: :edit_appointment
   delete '/business_owner/logout' => 'sessions#destroy'
 
