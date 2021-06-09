@@ -2,10 +2,10 @@ class AppointmentsController < ApplicationController
 
   def new
     @cbo = helpers.current_business_owner
+    @services = @cbo.services.all
     @clients = @cbo.clients.all
     @dogs = Dog.all.select { |d| d.client.business_owner_id == @cbo.id}
     @dogwalkers = @cbo.dogwalkers.all
-    @services = @cbo.services.all
     @appointment = Appointment.new
   end
 

@@ -15,32 +15,30 @@
 
 <div class="left_half">
   <%= form_for(@appointment) do |f| %>
-    <div>Appointment Date and Time</div>
-    <%= f.datetime_local_field :apptdate, required: true%>
-    <br>
-    <br>
-    <%= f.label :service %>
-    <%= f.collection_select :service_id, @services, :id, :drop_down_display, required: true %>
 
-    <p>Assign a Dog Walker:</p>
-
-    <%= f.collection_select :dogwalker_id, @dogwalkers, :id, :name, value: Dogwalker.find_by_name("Not Assigned"), required: true %>
+    <div>Appointment Date and Time </div>
+    <div class="form_item"><%= f.datetime_local_field :apptdate, required: true, :class=>"text" %></div>
+    <br>
+    <div>Service </div>
+    <div class="form_item"><%= f.collection_select :service_id, @services, :id, :drop_down_display, required: true %></div>
+    <br>
+    <div>Assign a Dog Walker:</div>
+    <div class="form_item"><%= f.collection_select :dogwalker_id, @dogwalkers, :id, :name, value: Dogwalker.find_by_name("Not Assigned"), required: true %></div>
 
 
   </div>
 
   <div class="right_half">
 
-    <p>Select the Dog that this appointment is for by choosing from this list</p>
-
-    <%= f.collection_select :dog_id, @dogs, :id, :name_with_client, {prompt: "Please select a dog"}, required: true %>
+    <div>Select the Dog that this appointment is for by choosing from this list</div>
+    <div class="form_item"><%= f.collection_select :dog_id, @dogs, :id, :name_with_client, {prompt: "Please select a dog"}, required: true %></div>
     <br>
-    <br>
-  <p> Or add a new dog </p>
-
-  <%= f.submit "Add Appointment" %>
-  <% end %>
-
-  <% end %>
+    <div> Or add a new dog </div>
+    <div><i>form to add new dog</i></div>
   </div>
 </div>
+
+<div class="form_item"><%= f.submit "Add Appointment", :class=>"submit" %></div>
+<% end %>
+
+<% end %>

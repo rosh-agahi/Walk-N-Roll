@@ -199,6 +199,10 @@ input.text {
   text-align: center;
 }
 
+#appointment_apptdate {
+  width: 280px;
+}
+
 input.submit {
   border: none;
   background: #8FBC8F;
@@ -227,12 +231,28 @@ div.split_container {
 }
 
 div.left_half {
-  background-color: green;
+  display: flex;
+  flex-direction: row;
+  border-radius: 25px;
+  background-color: #AFEEEE;
   padding: 20px;
   margin-right: 20px;
+  width: 45%;
 }
 
 div.right_half {
-  background-color: green;
+  border-radius: 25px;
+  background-color: #AFEEEE;
   padding: 20px;
+  width: 45%;
+}
+
+select {
+  border: none;
+  padding: 10px 10px;
+  margin: 0;
+  background: #f8f8f8;
+  width: 300px;
+  font-family: monospace;
+  text-align: center;
 }
