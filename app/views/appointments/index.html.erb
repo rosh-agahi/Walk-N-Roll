@@ -8,7 +8,7 @@
   <tr>
     <th>Day</th>
     <th>Date</th>
-    <th>Time</th>
+    <th>Pickup Time</th>
     <th>Dog</th>
     <th>Client</th>
     <th>Dog Walker</th>
@@ -21,7 +21,7 @@
   <tr>
     <td><%= a.display_datetime.split(" ")[0] %></td>
     <td><%= a.display_datetime.split(" ")[1] %></td>
-    <td><%= a.display_datetime.split(" ")[2] %></td>
+    <td><%= a.display_datetime.split(" ")[2..3].join(" ") %></td>
     <td><%= a.dog.name %></td>
     <td><%= a.dog.client.name %></td>
 
