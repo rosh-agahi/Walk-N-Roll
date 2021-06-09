@@ -2,11 +2,11 @@
 
 <%= form_for @service do |f| %>
 
-<p>Change service description:</p>
-<%= f.text_field :description %>
+<div>Change service description:</div>
+<div class="form_item"><%= f.text_field :description, :class=>"text" %></div>
+<br>
+<div>Change service price:</div>
+<div class="form_item"><%= f.text_field :price, required: true, :class=>"text" %></div>
 
-<p>Change service price:</p>
-<%= f.text_field :price, required: true %>
-
-<%= f.submit "Update" %>
+<div class="form_item"><%= f.submit "Update", :class=>"submit" %></div>
 <% end %>
