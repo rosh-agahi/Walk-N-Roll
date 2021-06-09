@@ -15,7 +15,7 @@
   <div class="top_header">
     <div class="title">
       <p>Get ready to </p>
-      <h1>    Walk n Roll!</h1>
+      <h1>Walk n Roll!</h1>
     </div>
   </div>
 
@@ -23,14 +23,14 @@
     <% if logged_in? %>
       <div class="menu_items"><%= link_to "Logout", business_owner_logout_path, method: :delete %></div>
       <div class="menu_items"><%= link_to "Home", business_owner_path(session[:business_owner_id]) %></div>
-      <div class="menu_items"><%= link_to "Add Client", new_client_path %></div>
-      <div class="menu_items"><%= link_to "Add Dog", new_dog_path %></div>
-      <div class="menu_items"><%= link_to "Add Dog Walker", new_dogwalker_path %></div>
-      <div class="menu_items"><%= link_to "Add Appointment", new_appointment_path %></div>
-      <div class="menu_items"><%= link_to "Manage Services", services_path %></div>
+      <div class="menu_items"><%= link_to "Clients", clients_path %></div>
+      <div class="menu_items"><%= link_to "Dogs", dogs_path %></div>
+      <div class="menu_items"><%= link_to "Walkers", dogwalkers_path %></div>
+      <div class="menu_items"><%= link_to "Appointments", appointments_path %></div>
+      <div class="menu_items"><%= link_to "Services", services_path %></div>
 
     <% else %>
-      <%= link_to "Businesss Owner Log In", business_owner_login_path %>
+      <div class="menu_item name_tag">Roshanak Agahi // Flatiron School // Project 3: Ruby on Rails</div>
     <% end %>
   </nav>
 
@@ -40,6 +40,8 @@
 
 
   <body>
-    <%= yield %>
+    <div class="page_content">
+      <%= yield %>
+    </div>
   </body>
 </html>
