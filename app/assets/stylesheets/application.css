@@ -24,19 +24,6 @@
    max-height: 180px;
  } */
 
- /* .container {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center;
- }
-
- .container2 {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: stretch;
- } */
 
  nav.menu_bar {
    display: flex;
@@ -195,4 +182,40 @@ p.kpi {
 .nav_pills_red {
   margin-right: 10px;
   background-color: #FA8072;
+}
+
+label {
+  line-height: 25px;
+  text-align: center;
+}
+
+input.text {
+  border: none;
+  padding: 10px 10px;
+  margin: 0;
+  background: #f8f8f8;
+  width: 300px;
+  font-family: monospace;
+  text-align: center;
+}
+
+input.submit {
+  border: none;
+  background: #8FBC8F;
+  font-size: 15px;
+  font-family: 'Coiny', sans-serif;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: white;
+  margin-top: 10px;
+}
+
+div.center_form {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+div.form_item {
+  line-height: 20px;
 }
