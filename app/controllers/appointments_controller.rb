@@ -22,6 +22,10 @@ class AppointmentsController < ApplicationController
 
   end
 
+  def index
+    @appointments = helpers.current_business_owner.appointments
+  end
+
   def destroy
     Appointment.find_by_id(params[:id]).destroy
     redirect_to '/appointments'

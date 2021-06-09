@@ -17,7 +17,7 @@
     <th></th>
   </tr>
 
-  <% Appointment.all.sort_by{|x| x.apptdate}.each do |a| %>
+  <% @appointments.sort_by{|x| x.apptdate}.each do |a| %>
   <tr>
     <td><%= a.display_datetime.split(" ")[0] %></td>
     <td><%= a.display_datetime.split(" ")[1] %></td>
