@@ -11,4 +11,9 @@ class Client < ApplicationRecord
     "$#{sprintf('%.2f',rev)}"
   end
 
+  def phonenumber_display
+    p = phonenumber.to_s
+    "(#{p[0..2]}) #{p[3..5]}-#{p[6..9]}"
+  end
+
 end

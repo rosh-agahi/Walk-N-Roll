@@ -1,6 +1,9 @@
-<h1> <%= @client.name %>'s Dogs </h1>
+<h1> Client: <%= @client.name %> </h1>
 
-Book an appointment for:
+<p><strong>Phone Number:</strong> <%=@client.phonenumber_display %></p>
+<p><strong>Address:</strong> <%=@client.address %></p>
+
+<p><%= @client.name %>'s dogs:</p>
 
 <% if @client.dogs.count < 1 %>
   <p>Ruh, roh... Looks like <%= @client.name %> doesn't have any dogs yet. Add a dog for them to see them appear in this list. </p>
@@ -11,3 +14,7 @@ Book an appointment for:
     <% end %>
   </ul>
 <% end %>
+
+<div>
+  <%= link_to "Add Dogs", new_dog_path, :class=> "link_button" %>
+</div>
