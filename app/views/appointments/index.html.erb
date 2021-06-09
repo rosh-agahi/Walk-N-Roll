@@ -1,23 +1,41 @@
-<h1>All Appointments</h1>
+<h1>Appointments</h1>
 
 <div>
   <%= link_to "Add Appointments", new_appointment_path, :class=> "link_button" %>
 </div>
-
+<br>
 <table>
+  <tr>
+    <th>Day</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Dog</th>
+    <th>Client</th>
+    <th>Dog Walker</th>
+    <th>Service</th>
+    <th></th>
+    <th></th>
+  </tr>
+
   <% Appointment.all.sort_by{|x| x.apptdate}.each do |a| %>
   <tr>
-    <% if logged_in? %>
-      <td><%= link_to "Cancel", "/appointments/#{a.id}", method: :delete, :class => "delete_button" %></td>
-      <td><%= link_to "Edit", edit_appointment_path(a), :class => "edit_button" %></td>
-    <% end %>
-    <td><%= a.display_datetime %></td>
+    <td><%= a.display_datetime.split(" ")[0] %></td>
+    <td><%= a.display_datetime.split(" ")[1] %></td>
+    <td><%= a.display_datetime.split(" ")[2] %></td>
     <td><%= a.dog.name %></td>
     <td><%= a.dog.client.name %></td>
-    <td>
-        <%= a.dogwalker.name %>
-    </td>
+
+      <% if a.dogwalker.name == "Not Assigned" %>
+        <td style="color: red;"><%= a.dogwalker.name %></td>
+      <% else %>
+        <td><%= a.dogwalker.name %></td>
+      <% end %>
+
     <td><%= a.service.description %></td>
+    <% if logged_in? %>
+      <td><%= link_to "Edit", edit_appointment_path(a), :class => "edit_button" %></td>
+      <td><%= link_to "Cancel", "/appointments/#{a.id}", method: :delete, :class => "delete_button" %></td>
+    <% end %>
   </tr>
   <% end %>
 </table>

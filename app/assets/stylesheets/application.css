@@ -101,22 +101,23 @@
  a.link_button {
    text-decoration: none;
    font-size: 15px;
-   background-color: deepskyblue;
-   padding: 6px;
+   background-color: #8FBC8F;
+   font-family: 'Coiny', sans-serif;
+   padding: 10px 20px;
+   border-radius: 25px;
    line-height: 40px;
  }
 
  a.delete_button {
-   background-color: red;
-   padding: 8px;
-   border-radius: 15%;
+   background-color: #FA8072;
+   padding: 4px 10px;
    font-weight: normal;
    text-align: center;
  }
  a.edit_button {
-   background-color: blue;
-   padding: 8px;
-   border-radius: 15%;
+   color: black;
+   background-color: #AFEEEE;
+   padding: 4px 10px;
    font-weight: normal;
    text-align: center;
  }
@@ -141,11 +142,13 @@
 
  th {
    text-align: left;
-   padding-right: 20px;
+   padding: 5px 30px 5px 0px;
+   border-bottom: 1px dashed black;
+   margin-bottom: 10px;
  }
 
  td {
-   padding: 5px;
+   padding: 5px 15px 5px 0px;
  }
 
  tr.services {
@@ -164,11 +167,12 @@ div.home_tile_container{
 }
 
 div.home_tile{
-  background-color: #FFF5EE;
+  background-color: #AFEEEE;
   width: 20%;
   text-align: center;
   padding-top: 10px;
   margin: 2%;
+  border-radius: 25px;
 }
 
 p.kpi {
