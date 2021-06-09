@@ -1,17 +1,24 @@
 <h1>My Dog Walkers</h1>
 
 <div>
-  <%= link_to "Add Dog Walkers", new_dogwalker_path, :class=> "link_button" %>
+  <%= link_to "Add Dog Walkers", new_dogwalker_path, :class=> "nav_pills link_button" %>
 </div>
+<br>
 
 <table>
+  <tr>
+  <th>Name</th>
+  <th>Appointments</th>
+  <th></th>
+  </tr>
+
   <% current_business_owner.dogwalkers.each do |w| %>
     <% if w.name !="Not Assigned" %>
-    <tr class="services">
-      <% if logged_in? %>
-        <td><%= link_to "X", "/dogwalkers/#{w.id}", method: :delete, :class => "delete_button" %></td>
-      <% end %>
-        <td><%= link_to w.name, dogwalker_path(w), :class => "table_button" %></td>
+    <tr>
+      <td><%= link_to w.name, dogwalker_path(w), :class => "table_button" %></td>
+      <td class="table_number"><%= w.appointments.count %></td>
+      <td><%= link_to "Delete", "/dogwalkers/#{w.id}", method: :delete, :class => "delete_button"%></td>
+
       </tr>
     <% end %>
   <% end %>
