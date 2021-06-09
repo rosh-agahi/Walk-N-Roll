@@ -1,7 +1,13 @@
 <h1>My Clients</h1>
 
-<div>
+<div class="container">
+<div class="nav_pills">
   <%= link_to "Add Client", new_client_path, :class=> "link_button" %>
+</div>
+
+<div class="nav_pills">
+  <%= link_to "Add Dog", new_dog_path, :class=> "link_button" %>
+</div>
 </div>
 
 <br>
@@ -15,10 +21,10 @@
   </tr>
   <% current_business_owner.clients.each do |c| %>
   <tr>
-    <td> <%= link_to c.name, client_path(c), :class => "link_button" %></td>
-    <td> <%= c.dogs.count %> </td>
-    <td> <%= c.appointments.count %> </td>
-    <td> <%= c.revenue %> </td>
+    <td> <%= link_to c.name, client_path(c), :class => "table_button" %></td>
+    <td class="table_number"> <%= c.dogs.count %> </td>
+    <td class="table_number"> <%= c.appointments.count %> </td>
+    <td class="table_number"> <%= c.revenue %> </td>
   </tr>
   <% end %>
 </table>

@@ -163,7 +163,12 @@ div.home_tile_container{
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
 
+div.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
 }
 
 div.home_tile{
@@ -177,4 +182,12 @@ div.home_tile{
 
 p.kpi {
   font-size: 40px;
+}
+
+.table_number {
+  text-align: center;
+}
+
+.nav_pills {
+  margin-right: 10px;
 }
