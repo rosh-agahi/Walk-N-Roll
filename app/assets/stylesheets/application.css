@@ -91,7 +91,7 @@
    font-family: 'Coiny', sans-serif;
    padding: 10px 20px;
    border-radius: 25px;
-   line-height: 40px;
+   line-height: 15px;
  }
 
  a.delete_button {
@@ -179,6 +179,11 @@ p.kpi {
   background-color: #8FBC8F;
 }
 
+.nav_pills_rainbow {
+  margin-right: 10px;
+  background: linear-gradient(0.25turn, #4285f4, #ea4335, #fbbc05, #34a853);
+}
+
 .nav_pills_red {
   margin-right: 10px;
   background-color: #FA8072;
@@ -230,6 +235,12 @@ div.split_container {
   justify-content: left;
 }
 
+div.welcome_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 div.left_half {
   display: flex;
   flex-direction: row;
@@ -255,4 +266,8 @@ select {
   width: 300px;
   font-family: monospace;
   text-align: center;
+}
+
+.red_notice {
+  color: red;
 }

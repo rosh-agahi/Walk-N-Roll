@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   delete '/services/:id/delete' => 'services#destroy'
   delete '/appointments/:id/delete' => 'appointments#destroy'
 
-  get '/oauth/google_oauth2/callback' => 'sessions#omniauth'
+  get '/auth/google_oauth2/callback' => 'sessions#omniauth'
 
   # get '/clients/login' => 'sessions#new'
   # post '/clients/login' => 'sessions#create'

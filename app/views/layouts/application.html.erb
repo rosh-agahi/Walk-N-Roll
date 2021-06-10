@@ -34,13 +34,14 @@
     <% end %>
   </nav>
 
-  <div>
-    <%= flash[:notice] %>
-  </div>
-
 
   <body>
     <div class="page_content">
+
+      <div class="red_notice">
+        <%= flash[:notice] %>
+      </div>
+
       <%= yield %>
     </div>
   </body>
