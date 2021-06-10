@@ -2,11 +2,12 @@
 
 
 
-<p> Business Owners:
+<p> Business Owners: </p>
   <%= link_to "Log In", business_owner_login_path, :class=> "nav_pills link_button" %>
-  OR
-  <%= link_to "Signup", business_owner_signup_path, :class=> "nav_pills link_button"%>
-</p>
+  <br>
+  <%= link_to "Register", business_owner_signup_path, :class=> "nav_pills link_button"%>
+  <br>
+  <%= link_to "Register & Sign In with Google", "/auth/google_oauth2" %>
 
 <p style="color: lightgrey"> Clients:
   login // signup <br>
