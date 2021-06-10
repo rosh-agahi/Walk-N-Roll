@@ -29,13 +29,13 @@ class SessionsController < ApplicationController
       b.name = auth[:info][:email].split('@')[0]
     end
 
-    Dogwalker.create(:name => "Not Assigned", :business_owner_id => @business_owner.id)
-    Dogwalker.create(:name => "#{@business_owner.name} (myself)", :business_owner_id => @business_owner.id)
-
-    session[:business_owner_id] = @business_owner.id
-
-    redirect_to business_owner_path(@business_owner)
-
+    if !!@business_owner.dogwalkers.where("name = 'Not Assigned'")
+      set_session_and_redirect(@business_owner)
+    else
+      Dogwalker.create(:name => "Not Assigned", :business_owner_id => @business_owner.id)
+      Dogwalker.create(:name => "#{@business_owner.name} (myself)", :business_owner_id => @business_owner.id)
+      set_session_and_redirect(@business_owner)
+    end 
   end
 
   private
@@ -43,5 +43,11 @@ class SessionsController < ApplicationController
   def auth
     request.env['omniauth.auth']
   end
+
+  def set_session_and_redirect(b)
+    session[:business_owner_id] = b.id
+    redirect_to business_owner_path(b)
+  end
+
 
 end
