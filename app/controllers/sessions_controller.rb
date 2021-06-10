@@ -23,5 +23,25 @@ class SessionsController < ApplicationController
     end
   end
 
+  def omniauth
+    @business_owner = BusinessOwner.find_or_create_by(username: auth[:info][:email]) do |b|
+      b.password = SecureRandom.hex
+      b.name = auth[:info][:email].split('@')[0]
+    end
+
+    Dogwalker.create(:name => "Not Assigned", :business_owner_id => @business_owner.id)
+    Dogwalker.create(:name => "#{@business_owner.name} (myself)", :business_owner_id => @business_owner.id)
+
+    session[:business_owner_id] = @business_owner.id
+
+    redirect_to business_owner_path(@business_owner)
+
+  end
+
+  private
+
+  def auth
+    request.env['omniauth.auth']
+  end
 
 end
