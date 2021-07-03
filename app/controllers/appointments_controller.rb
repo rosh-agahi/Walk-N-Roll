@@ -26,7 +26,12 @@ class AppointmentsController < ApplicationController
   end
 
   def index
-    @appointments = helpers.current_business_owner.appointments
+    if params[:client_id]
+      @client = Client.find_by_id(params[:client_id])
+      @appointments = @client.appointments 
+    else
+      @appointments = helpers.current_business_owner.appointments
+    end
   end
 
   def destroy
