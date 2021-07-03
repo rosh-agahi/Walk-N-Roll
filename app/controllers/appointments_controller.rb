@@ -28,7 +28,7 @@ class AppointmentsController < ApplicationController
   def index
     if params[:client_id]
       @client = Client.find_by_id(params[:client_id])
-      @appointments = @client.appointments 
+      @appointments = @client.appointments
     else
       @appointments = helpers.current_business_owner.appointments
     end
@@ -49,13 +49,15 @@ class AppointmentsController < ApplicationController
   def update
     @appointment = Appointment.find_by_id(params[:id])
     @appointment.update(dogwalker_id: params[:appointment][:dogwalker_id])
+    @appointment.update(tip: params[:appointment][:tip])
+
     redirect_to appointments_path
   end
 
   private
 
   def appointment_params
-    params.require(:appointment).permit(:apptdate, :service_id, :dog_id, :dogwalker_id)
+    params.require(:appointment).permit(:apptdate, :service_id, :dog_id, :dogwalker_id, :tip)
   end
 
 end
