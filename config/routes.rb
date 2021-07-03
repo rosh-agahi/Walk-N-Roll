@@ -21,7 +21,9 @@ Rails.application.routes.draw do
 
   resources :business_owners
   resources :appointments
-  resources :dogs
+  resources :dogs do
+    resources :appointments, only: [:new]
+  end 
   resources :dogwalkers
   resources :clients
 
