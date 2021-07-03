@@ -34,12 +34,12 @@ Specs:
 * **Appointment:** belongs to BusinessOwner, belongs to Client
 * *Service:*
 
-- [ ] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
-**Appointments is the join table**
-**User submittable attributes:**
-Service
-date and time of the appointment
-cost of the appointment = Service.price + Appointment.tip
+- [ ] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)<br>
+* **Appointments is the join table**
+  * **User submittable attributes:**
+    * Service
+    * date and time of the appointment
+    * cost of the appointment = Service.price + Appointment.tip
 
 - [ ] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
 **Validations:**
@@ -86,7 +86,7 @@ nested show page for a particular client's appointments
 
 - [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
 **'/clients/:id/appointments/new'**
-new appointment from the client page. 
+new appointment from the client page.
 
 - [ ] Include form display of validation errors (form URL e.g. /recipes/new)
 
