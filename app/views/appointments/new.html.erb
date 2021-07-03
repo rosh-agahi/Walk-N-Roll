@@ -16,11 +16,14 @@
       <% if params[:dog_id] %>
         <h3>Appointment for: <%= @dog.name %></h3>
         <h4>Client: <%= @dog.client.name %> </h4>
+        <%= f.hidden_field :dog_id, :value => @dog.id %>
       <% else %>
         <div>Select the Dog that this appointment is for</div>
         <div class="form_item"><%= f.collection_select :dog_id, @dogs, :id, :name_with_client, {prompt: "Please select a dog"}, required: true %></div>
       <% end %>
 
+      <br>
+      
       <div>Appointment Date and Time </div>
       <div class="form_item"><%= f.datetime_local_field :apptdate, required: true, :class=>"text" %></div>
       <br>
