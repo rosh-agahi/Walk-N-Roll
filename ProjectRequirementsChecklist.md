@@ -7,10 +7,10 @@ Specs:
 * **Client:** has many dogs
 * **Dogwalker:** has many appointments
 * **Dog:** has many appointments
-* **Appointment:** -
+* ~~Appointment:~~
 
 - [x] Include at least one belongs_to relationship (x belongs_to y; e.g. Post belongs_to User)
-* **BusinessOwner:** -
+* ~~BusinessOwner:~~
 * **Client:** belongs to BusinessOwner
 * **Dogwalker:** belongs to BusinessOwner
 * **Dog:** belongs to Client  
@@ -19,12 +19,16 @@ Specs:
 - [x] Include at least two has_many through relationships (x has_many y through z; e.g. Recipe has_many Items through Ingredients)
 * **BusinessOwner:** has many appointments through Dogwalkers
 * **Client:** has many appointments through Dogs
-* **Dogwalker:** -
-* **Dog:** -
-* **Appointment:** -
+* ~~Dogwalker:~~
+* ~~Dog:~~
+* ~~Appointment:~~
 
 - [ ] Include at least one many-to-many relationship (x has_many y through z, y has_many x through z; e.g. Recipe has_many Items through Ingredients, Item has_many Recipes through Ingredients)
-
+* **BusinessOwner:**
+* **Client:**
+* **Dogwalker:**
+* **Dog:**
+* **Appointment:**
 
 - [ ] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
 - [ ] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
