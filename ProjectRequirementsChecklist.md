@@ -80,11 +80,11 @@ this is then shown on the Dogwalkers#show view for Tips Earned
 - [x] Include logout
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth)
 
-- [ ] Include nested resource show or index (URL e.g. users/2/recipes)
+- [x] Include nested resource show or index (URL e.g. users/2/recipes)
 **'/clients/:id/appointments'**
 nested show page for a particular client's appointments
 
-- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
+- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
 **'/dogs/:dog_id/appointments/new'**
 on the client show page there is a list of the cliet's dogs. I want a button next to each dog to add a new appointment for that dog.
 
