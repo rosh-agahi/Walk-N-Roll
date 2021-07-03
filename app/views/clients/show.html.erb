@@ -10,7 +10,9 @@
 <% else %>
   <ul>
     <% @client.dogs.each do |d| %>
-      <li><%= d.name %></li>
+      <li><%= d.name %>
+        <a class="add_appt" href="/dogs/<%= d.id %>/appointments/new">Add appointment</a>
+      </li>
     <% end %>
   </ul>
 <% end %>

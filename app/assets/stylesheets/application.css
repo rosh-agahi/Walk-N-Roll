@@ -271,3 +271,7 @@ select {
 .red_notice {
   color: red;
 }
+
+.add_appt {
+  color: green;
+}
