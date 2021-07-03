@@ -3,23 +3,26 @@ class AppointmentsController < ApplicationController
   def new
     @cbo = helpers.current_business_owner
     @services = @cbo.services.all
-    @clients = @cbo.clients.all
-    @dogs = Dog.all.select { |d| d.client.business_owner_id == @cbo.id}
     @dogwalkers = @cbo.dogwalkers.all
-    @appointment = Appointment.new
+    if params[:dog_id]
+      @dog = Dog.find_by_id(params[:dog_id])
+      @appointment = @dog.appointments.build
+    else
+      # @clients = @cbo.clients.all
+      @dogs = Dog.all.select { |d| d.client.business_owner_id == @cbo.id}
+      @appointment = Appointment.new
+    end
   end
 
   def create
-
     @appointment = Appointment.new(appointment_params)
         if @appointment.save
           flash[:notice] = "Appointment was added for #{@appointment.dog.name} on #{@appointment.apptdate}."
           redirect_to new_appointment_path
         else
           flash[:notice] = "please try again"
-          render :new
+          redirect_to new_appointment_path
         end
-
   end
 
   def index
