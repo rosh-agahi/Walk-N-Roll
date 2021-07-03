@@ -16,6 +16,7 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params)
+    @appointment.tip = 0
         if @appointment.save
           flash[:notice] = "Appointment was added for #{@appointment.dog.name} on #{@appointment.apptdate}."
           redirect_to new_appointment_path
