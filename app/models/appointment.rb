@@ -7,4 +7,8 @@ class Appointment < ApplicationRecord
     "#{apptdate.strftime("%A %m/%d/%Y %I:%M")} #{apptdate.strftime("%H").to_i > 12 ? ('PM') : ('AM')}"
   end
 
+  def total_cost
+    service.price + tip
+  end
+
 end
