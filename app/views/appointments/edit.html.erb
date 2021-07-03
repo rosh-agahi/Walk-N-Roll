@@ -17,8 +17,13 @@
 
 <br>
 
-<p>Assign a dog walker:</p>
+
 <%= form_for @appointment do |f| %>
+<p>Assign a dog walker:</p>
 <div class="form_item"><%= f.collection_select :dogwalker_id, @dogwalkers, :id, :name, required: true %></div>
+<br>
+<p>Add tips received:</p>
+<div class="form_item"><%= f.text_field :tip, :class=>"text" %></div>
+<br>
 <div class="form_item"><%= f.submit "Update", :class=>"submit" %></div>
 <% end %>
