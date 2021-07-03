@@ -21,10 +21,14 @@ Rails.application.routes.draw do
 
   resources :business_owners
   resources :appointments
+  resources :dogwalkers
+
   resources :dogs do
     resources :appointments, only: [:new]
+  end
+
+  resources :clients do
+    resources :appointments, only: [:index]
   end 
-  resources :dogwalkers
-  resources :clients
 
 end
