@@ -85,8 +85,8 @@ this is then shown on the Dogwalkers#show view for Tips Earned
 nested show page for a particular client's appointments
 
 - [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
-**'/clients/:id/appointments/new'**
-new appointment from the client page.
+**'/dogs/:dog_id/appointments/new'**
+on the client show page there is a list of the cliet's dogs. I want a button next to each dog to add a new appointment for that dog.
 
 - [ ] Include form display of validation errors (form URL e.g. /recipes/new)
 
