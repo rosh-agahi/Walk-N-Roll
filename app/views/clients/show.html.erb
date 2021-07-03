@@ -1,5 +1,7 @@
 <h1> Client: <%= @client.name %> </h1>
 
+<%= link_to "View Appointments", client_appointments_path(@client), :class=> "nav_pills link_button" %>
+
 <p><strong>Phone Number:</strong> <%=@client.phonenumber_display %></p>
 <p><strong>Address:</strong> <%=@client.address %></p>
 
