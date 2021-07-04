@@ -19,7 +19,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
     @appointment.tip = 0
         if @appointment.save
-          flash[:notice] = "Appointment was added for #{@appointment.dog.name} on #{@appointment.apptdate}."
+          flash[:notice] = "Appointment was added for #{@appointment.dog.name} on #{@appointment.display_datetime}."
           redirect_to appointments_path
         else
           flash[:notice] = "please try again"
