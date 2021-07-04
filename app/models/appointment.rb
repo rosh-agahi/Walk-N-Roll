@@ -3,9 +3,9 @@ class Appointment < ApplicationRecord
   belongs_to :dogwalker
   belongs_to :service
 
-  validates :apptdate, presence: true, message: "Appointment must have a Date and Time."
-  validates :service_id, presence: true, message: "Please select a service for the appointment."
-  validates :dog_id, presence: true, message: "Please select the dog this appointment belongs to. "
+  validates :apptdate, presence: true
+  validates :service_id, presence: true
+  validates :dog_id, presence: true
 
 
   def display_datetime

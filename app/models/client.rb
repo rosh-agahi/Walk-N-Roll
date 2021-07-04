@@ -5,8 +5,8 @@ class Client < ApplicationRecord
   has_many :services, through: :appointments
 
   validates :name, presence: true
-  validates :phonenumber, uniqueness: true, presence: true, message: "please include a unique phone number. "
-  validates_format_of :phonenumber, :with => /\d{7}/, message: "please type phone number without spaces or special characters ie '-'"
+  validates :phonenumber, uniqueness: true, presence: true, format: { :with => /\d{7}/ }
+  validates :address, presence: true 
 
 
   def revenue
