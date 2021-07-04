@@ -4,6 +4,7 @@ class AppointmentsController < ApplicationController
     @cbo = helpers.current_business_owner
     @services = @cbo.services.all
     @dogwalkers = @cbo.dogwalkers.all
+
     if params[:dog_id]
       @dog = Dog.find_by_id(params[:dog_id])
       @appointment = @dog.appointments.build
