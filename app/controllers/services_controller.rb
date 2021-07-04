@@ -28,6 +28,7 @@ class ServicesController < ApplicationController
   def update
     @service = Service.find_by_id(params[:id])
     @service.update(description: params[:service][:description],price: params[:service][:price])
+    flash[:notice] = "Service '#{@service.description}' was archived."
     redirect_to services_path
   end
 
