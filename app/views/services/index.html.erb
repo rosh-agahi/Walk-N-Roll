@@ -18,7 +18,7 @@
       <td><%= s.description %></td>
       <td class="table_number"><%= s.display_price %></td>
       <% if logged_in? %>
-        <td><%= link_to "Archive", archive_service_path(s), :class => "delete_button" %></td>
+        <td><%= link_to s.status ?  "Archive" : "Reactivate", archive_service_path(s), :class => "delete_button" %></td>
         <td><%= link_to "Edit", edit_service_path(s), :class => "edit_button" %></td>
       <% end %>
     </tr>

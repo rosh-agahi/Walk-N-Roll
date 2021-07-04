@@ -34,7 +34,11 @@ class ServicesController < ApplicationController
 
   def archive
     @service = Service.find_by_id(params[:id])
-    @service.update(status: false)
+    if @service.status == true
+      @service.update(status: false)
+    else
+      @service.update(status: true)
+    end 
     redirect_to services_path
   end
 
