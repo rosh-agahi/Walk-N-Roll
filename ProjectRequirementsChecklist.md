@@ -41,16 +41,22 @@ Specs:
     * date and time of the appointment
     * cost of the appointment = Service.price + Appointment.tip
 
-- [ ] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
+- [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
 **Validations:**
 * BusinessOwner: unique username, presence of password
-* Client: unique phonenumber with 9 digits, presence of name  
-* Dogwalker
-* Dog
-* Appointment: presence of service_id, dog_id, and datetime 
-* Service
+* Client: unique phonenumber with 9 digits, presence of name and address
+* ~~Dogwalker~~
+* ~~Dog~~
+* Appointment: presence of service_id, dog_id, and datetime
+* Service: presence of description and price
 
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+- [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+**Active Services**
+```
+scope :active, -> {where("status = ?", true)}
+```
+Then this is called in the new appointments form to only show active services to choose from.
+
 **Revenue**
 in the businessowner model:
 ```
@@ -88,10 +94,12 @@ nested show page for a particular client's appointments
 **'/dogs/:dog_id/appointments/new'**
 on the client show page there is a list of the cliet's dogs. I want a button next to each dog to add a new appointment for that dog.
 
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [x] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:
 - [x] The application is pretty DRY
 - [x] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
+- [x] Views use helper methods if appropriate
+  - helper methods include dollar_display, logged_in?, current_business_owner
+- [x] Views use partials if appropriate
+  - using partials to display form error messages.

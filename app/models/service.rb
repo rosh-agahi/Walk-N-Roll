@@ -4,7 +4,7 @@ class Service < ApplicationRecord
 
   validates :description, presence: true
   validates :price, presence: true
-  validates_numericality_of :price 
+  validates_numericality_of :price
 
   scope :active, -> {where("status = ?", true)}
 
