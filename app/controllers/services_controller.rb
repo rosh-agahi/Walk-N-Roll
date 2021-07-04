@@ -12,6 +12,7 @@ class ServicesController < ApplicationController
   def create
     @service = Service.new(service_params)
     @service.business_owner_id = helpers.current_business_owner.id
+    @service.status = true
     if @service.save
       flash[:notice] = "New service: '#{@service.description}' was added."
       redirect_to new_service_path
