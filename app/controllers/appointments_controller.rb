@@ -2,7 +2,7 @@ class AppointmentsController < ApplicationController
 
   def new
     @cbo = helpers.current_business_owner
-    @services = @cbo.services.all
+    @services = @cbo.services.all.active
     @dogwalkers = @cbo.dogwalkers.all
 
     if params[:dog_id]
