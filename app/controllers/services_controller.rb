@@ -30,6 +30,12 @@ class ServicesController < ApplicationController
     redirect_to services_path
   end
 
+  def archive
+    @service = Service.find_by_id(params[:id])
+    @service.update(status: false)
+    redirect_to services_path
+  end
+
 
   private
 
