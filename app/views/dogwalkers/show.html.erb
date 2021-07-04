@@ -8,9 +8,12 @@
 </div>
 </div>
 
+<br>
 
 <p><strong>Count of appointments:</strong> <%= @dogwalker.appointments.count %> </p>
+<p><strong>Total Tips Earned:</strong> <%= @dogwalker.total_tips_earned %> </p>
 
+<br>
 
   <table>
     <tr>
@@ -18,6 +21,7 @@
       <th>Dog Name</th>
       <th>Dog's Owner</th>
       <th>Service</th>
+      <th>Tips Earned</th>
     </tr>
     <% @dogwalker.appointments.sort.each do |a| %>
       <tr>
@@ -25,6 +29,7 @@
         <td><%= a.dog.name %></td>
         <td><%= link_to a.dog.client.name, client_path(a.dog.client), :class => "table_button" %></td>
         <td><%= a.service.description %></td>
+        <td><%= dollar_display(a.tip) %></td>
       </tr>
     <% end %>
   </table>

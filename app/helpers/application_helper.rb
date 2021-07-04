@@ -6,6 +6,10 @@ module ApplicationHelper
 
   def logged_in?
     !!current_business_owner
-  end 
+  end
+
+  def dollar_display(amount)
+    ActiveSupport::NumberHelper.number_to_currency(amount, :unit=> "$")
+  end
 
 end
