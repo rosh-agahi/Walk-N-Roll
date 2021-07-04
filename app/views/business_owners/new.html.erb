@@ -2,6 +2,9 @@
 <p>Business owners can sign up here.</p>
 
 <div class="center_form">
+
+<%= render partial: 'layouts/errors', locals: {object: @business_owner}  %>
+
   <%= form_for(@business_owner) do |f| %>
 
     <div class="form_item"><%= f.label :name %></div>

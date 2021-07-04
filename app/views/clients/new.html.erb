@@ -1,5 +1,7 @@
 <h1>Add a New Client</h1>
 
+<%= render partial: 'layouts/errors', locals: {object: @client}  %>
+
 <%= form_for(@client) do |f| %>
   <div class="form_item"><%= f.label :name %></div>
   <div class="form_item"><%= f.text_field :name, :class=>"text" %></div>

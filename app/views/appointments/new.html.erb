@@ -11,6 +11,9 @@
 
 <h1>Add a New Appointment</h1>
 
+
+<%= render partial: 'layouts/errors', locals: {object: @appointment}  %>
+
   <div>
     <%= form_for(@appointment) do |f| %>
       <% if params[:dog_id] %>
@@ -23,7 +26,7 @@
       <% end %>
 
       <br>
-      
+
       <div>Appointment Date and Time </div>
       <div class="form_item"><%= f.datetime_local_field :apptdate, required: true, :class=>"text" %></div>
       <br>
