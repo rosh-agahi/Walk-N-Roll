@@ -4,6 +4,11 @@ class Client < ApplicationRecord
   has_many :appointments, through: :dogs
   has_many :services, through: :appointments
 
+  validates :name, presence: true
+  validates :phonenumber, uniqueness: true, presence: true, message: "please include a unique phone number. "
+  validates_format_of :phonenumber, :with => /\d{7}/, message: "please type phone number without spaces or special characters ie '-'"
+
+
   def revenue
     r = 0
     prices = services.collect { |s| s.price }
