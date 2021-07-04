@@ -34,7 +34,7 @@ Specs:
 * **Appointment:** belongs to BusinessOwner, belongs to Client
 * *Service:*
 
-- [ ] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)<br>
+- [x] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)<br>
 * **Appointments is the join table**
   * **User submittable attributes:**
     * Service
@@ -43,11 +43,11 @@ Specs:
 
 - [ ] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
 **Validations:**
-* BusinessOwner
-* Client
+* BusinessOwner: unique username, presence of password
+* Client: unique phonenumber with 9 digits, presence of name  
 * Dogwalker
 * Dog
-* Appointment
+* Appointment: presence of service_id, dog_id, and datetime 
 * Service
 
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
