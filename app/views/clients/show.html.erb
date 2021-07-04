@@ -12,8 +12,9 @@
 <% else %>
   <ul>
     <% @client.dogs.each do |d| %>
-      <li><%= d.name %>
-        <a class="add_appt" href="/dogs/<%= d.id %>/appointments/new">Add appointment</a>
+      <li class="list_item">
+        <%= link_to "Add Appointment", new_dog_appointment_path(d), :class => "edit_button" %> |
+        <%= d.name %>
       </li>
     <% end %>
   </ul>
