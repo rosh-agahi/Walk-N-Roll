@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   get '/auth/google_oauth2/callback' => 'sessions#omniauth'
 
+  get '/services/:id/archive' => 'services#archive', as:'archive_service'
+
   # get '/clients/login' => 'sessions#new'
   # post '/clients/login' => 'sessions#create'
 
@@ -29,6 +31,6 @@ Rails.application.routes.draw do
 
   resources :clients do
     resources :appointments, only: [:index]
-  end 
+  end
 
 end
