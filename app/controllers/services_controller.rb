@@ -15,7 +15,7 @@ class ServicesController < ApplicationController
     @service.status = true
     if @service.save
       flash[:notice] = "New service: '#{@service.description}' was added."
-      redirect_to new_service_path
+      redirect_to services_path
     else
       render :new
     end
@@ -38,7 +38,7 @@ class ServicesController < ApplicationController
       @service.update(status: false)
     else
       @service.update(status: true)
-    end 
+    end
     redirect_to services_path
   end
 

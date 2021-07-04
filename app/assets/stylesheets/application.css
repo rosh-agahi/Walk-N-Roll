@@ -274,3 +274,12 @@ select {
 li.list_item {
   line-height: 30px;
 }
+
+.errors {
+  color: red;
+}
+
+ul {
+  list-style-position: inside;
+  padding-left: 0;
+}

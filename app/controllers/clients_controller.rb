@@ -11,10 +11,9 @@ class ClientsController < ApplicationController
 
     if @client.save
       flash[:notice] = "#{@client.name} was added as a new client."
-      redirect_to new_client_path
+      redirect_to clients_path
     else
-      flash[:notice] = "please try again"
-      render :new
+      render :new 
     end
   end
 

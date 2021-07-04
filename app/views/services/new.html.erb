@@ -1,5 +1,9 @@
 <h1>New Service</h1>
 
+<br>
+<%= render partial: 'layouts/errors', locals: {object: @service}  %>
+<br>
+
 <%= form_for(@service) do |f| %>
   <div class="form_item"><%= f.label :description %></div>
   <div class="form_item"><%= f.text_field :description, :class=>"text" %></div>

@@ -22,8 +22,7 @@ class AppointmentsController < ApplicationController
           flash[:notice] = "Appointment was added for #{@appointment.dog.name} on #{@appointment.display_datetime}."
           redirect_to appointments_path
         else
-          flash[:notice] = "please try again"
-          redirect_to new_appointment_path
+          render :new 
         end
   end
 
