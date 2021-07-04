@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_03_231226) do
+ActiveRecord::Schema.define(version: 2021_07_04_025927) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "apptdate"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2021_07_03_231226) do
     t.string "description"
     t.float "price"
     t.integer "business_owner_id"
+    t.boolean "status"
   end
 
   add_foreign_key "appointments", "dogs"
