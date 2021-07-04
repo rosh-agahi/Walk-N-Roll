@@ -4,6 +4,7 @@ class BusinessOwner < ApplicationRecord
   has_many :services
   has_many :appointments, through: :dogwalkers
   validates :username, uniqueness: true, presence: true
+  validates :password, presence: true 
 
   has_secure_password
 
