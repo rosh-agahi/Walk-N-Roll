@@ -272,10 +272,6 @@ select {
   color: red;
 }
 
-.add_appt {
-  color: green;
-}
-
 li.list_item {
   line-height: 30px;
 }

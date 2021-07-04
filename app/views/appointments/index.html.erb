@@ -33,7 +33,7 @@
       <% end %>
 
     <td><%= a.service.description %></td>
-    <td><%= a.total_cost %></td>
+    <td style="text-align: right;"><%= dollar_display(a.total_cost) %></td>
     <% if logged_in? %>
       <td><%= link_to "Edit", edit_appointment_path(a), :class => "edit_button" %></td>
       <td><%= link_to "Cancel", "/appointments/#{a.id}", method: :delete, :class => "delete_button" %></td>
