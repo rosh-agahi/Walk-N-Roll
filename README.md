@@ -4,6 +4,8 @@ Walk-N-Roll is an app designed for dogwalking business owners to manage their bu
 
 The user can create, update, and destroy all appointments. The user can also create, read and update any service item that they offer. Instead of allowing the user to delete services, I used an ActiveRecord scope method to identify any active vs archived services. By archiving a services, the user removes it from the list of available service in the new appointment form, but doesn't now remove it from the database. This keeps the app from erroring out if a service is deleted and it can't match an old appointment to a deleted service.
 
+To see all of the Ruby on Rails project requirements and how they were met, please visit the [Project Requirements Checklist](https://github.com/rosh-agahi/Walk-N-Roll/blob/main/ProjectRequirementsChecklist.md).
+
 ## Installing
 
 To install the app in your local environment:
