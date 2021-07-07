@@ -11,6 +11,15 @@
 </div>
 
 <br>
+<br>
+
+<%= form_tag("/clients") do %>
+  <span>Search Clients by name</span>
+  <%= text_field_tag "search_for"%>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<br>
 
 <table>
   <tr>
