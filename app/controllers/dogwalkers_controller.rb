@@ -1,6 +1,6 @@
 class DogwalkersController < ApplicationController
   before_action :require_login
-]
+
   def new
     @dogwalker = Dogwalker.new
   end
@@ -8,8 +8,7 @@ class DogwalkersController < ApplicationController
   def destroy
     @dogwalker = Dogwalker.find_by_id(params[:id])
     @dogwalker.appointments.each do |a|
-      a.dogwalker_id = Dogwalker.find_by(name: "Not Assigned").id
-      a.save
+      a.update(dogwalker_id: helpers.current_business_owner.dogwalkers.find_by(name: "Not Assigned").id)
     end
 
     @dogwalker.destroy
@@ -38,7 +37,7 @@ class DogwalkersController < ApplicationController
   def dogwalker_params
     params.require(:dogwalker).permit(:name)
   end
-  
+
   def require_login
     unless helpers.logged_in?
       flash[:notice] = "You must be logged in."
