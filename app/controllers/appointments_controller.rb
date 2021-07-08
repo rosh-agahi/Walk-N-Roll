@@ -11,7 +11,7 @@ class AppointmentsController < ApplicationController
       @appointment = @dog.appointments.build
     else
       # @clients = @cbo.clients.all
-      @dogs = Dog.all.select { |d| d.client.business_owner_id == @cbo.id} #where?
+      @dogs = helpers.current_business_owner.dogs #where?
       @appointment = Appointment.new
     end
   end

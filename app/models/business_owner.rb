@@ -1,5 +1,6 @@
 class BusinessOwner < ApplicationRecord
   has_many :clients
+  has_many :dogs, through: :clients
   has_many :dogwalkers
   has_many :services
   has_many :appointments, through: :dogwalkers
