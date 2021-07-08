@@ -6,7 +6,7 @@ class ClientsController < ApplicationController
 
   def index
     # populate based on class method for search
-    @clients = Clients.search_for_clients(params[:search_for])
+    @clients = Client.search_for_clients(params[:search])
 
   end
 
