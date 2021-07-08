@@ -8,7 +8,7 @@ class Client < ApplicationRecord
   validates :phonenumber, uniqueness: true, presence: true, format: { :with => /\d{7}/ }
   validates :address, presence: true
 
-  scope :this_business_owner, -> { where('business_owner_id = ?', ApplicationController.helpers.current_business_owner.id)}
+  scope :this_business_owner, -> { where('business_owner_id = ?', 2)}
 
 
   def revenue
@@ -24,7 +24,11 @@ class Client < ApplicationRecord
   end
 
   def self.search_for_clients(search)
-
+    if !search
+      all.this_business_owner
+    else
+      all.this_business_owner.where('name LIKE ?', "%#{search}%")
+    end
   end
 
 end
