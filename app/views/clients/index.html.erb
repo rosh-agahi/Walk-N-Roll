@@ -13,13 +13,15 @@
 <br>
 <br>
 
-<%= form_tag("/clients") do %>
+<%= form_tag clients_path, method:"get" do %>
   <span>Search Clients by name</span>
-  <%= text_field_tag "search_for"%>
+  <%= text_field_tag :search %>
   <%= submit_tag "Search" %>
 <% end %>
 
-<br>
+<button> <a href="/clients" style="color: black; ">Clear Search</a></button>
+
+<br><br>
 
 <table>
   <tr>
@@ -28,7 +30,8 @@
     <th>Appointments Booked</th>
     <th>Appointment Revenue</th>
   </tr>
-  <% current_business_owner.clients.each do |c| %>
+
+  <% @clients.each do |c| %>
   <tr>
     <td> <%= link_to c.name, client_path(c), :class => "table_button" %></td>
     <td class="table_number"> <%= c.dogs.count %> </td>
