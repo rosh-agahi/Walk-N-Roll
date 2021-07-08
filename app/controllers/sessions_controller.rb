@@ -29,13 +29,12 @@ class SessionsController < ApplicationController
       b.name = auth[:info][:email].split('@')[0]
     end
 
-    if !!@business_owner.dogwalkers.where("name = 'Not Assigned'") #returns an array. check if it's .empty? // also separation of concerns.
-      set_session_and_redirect(@business_owner)
-    else
+    if @business_owner.dogwalkers.where("name = 'Not Assigned'").empty? #returns an array. check if it's .empty? // also separation of concerns.
       Dogwalker.create(:name => "Not Assigned", :business_owner_id => @business_owner.id)
       Dogwalker.create(:name => "#{@business_owner.name} (myself)", :business_owner_id => @business_owner.id)
-      set_session_and_redirect(@business_owner)
     end
+
+    set_session_and_redirect(@business_owner)
   end
 
   private
