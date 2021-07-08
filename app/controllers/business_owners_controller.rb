@@ -1,4 +1,5 @@
 class BusinessOwnersController < ApplicationController
+  before_action :require_login, except: [:new, :create]
 
   def new
     @business_owner = BusinessOwner.new
@@ -26,6 +27,13 @@ class BusinessOwnersController < ApplicationController
 
   def user_params
     params.require(:business_owner).permit(:name, :username, :password, :business_join_code)
+  end
+
+  def require_login
+    unless helpers.logged_in?
+      flash[:notice] = "You must be logged in."
+      redirect_to business_owner_login_path
+    end
   end
 
 end

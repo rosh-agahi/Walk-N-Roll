@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+  before_action :require_login
 
   def new
     @cbo = helpers.current_business_owner
@@ -59,6 +60,13 @@ class AppointmentsController < ApplicationController
 
   def appointment_params
     params.require(:appointment).permit(:apptdate, :service_id, :dog_id, :dogwalker_id, :tip)
+  end
+
+  def require_login
+    unless helpers.logged_in?
+      flash[:notice] = "You must be logged in."
+      redirect_to business_owner_login_path
+    end
   end
 
 end

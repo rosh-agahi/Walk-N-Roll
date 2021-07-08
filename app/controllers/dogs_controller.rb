@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-
+  before_action :require_login
   def new
     @clients = helpers.current_business_owner.clients.all
     @dog = Dog.new
@@ -21,4 +21,10 @@ class DogsController < ApplicationController
     params.require(:dog).permit(:name, :age, :breed, :favorite_treat, :client_id)
   end
 
+  def require_login
+    unless helpers.logged_in?
+      flash[:notice] = "You must be logged in."
+      redirect_to business_owner_login_path
+    end
+  end
 end

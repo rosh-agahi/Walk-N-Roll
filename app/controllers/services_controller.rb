@@ -1,5 +1,6 @@
 class ServicesController < ApplicationController
-
+  before_action :require_login
+  
   def new
     @service = Service.new
   end
@@ -49,4 +50,10 @@ class ServicesController < ApplicationController
     params.require(:service).permit(:description, :price, :business_owner_id)
   end
 
+  def require_login
+    unless helpers.logged_in?
+      flash[:notice] = "You must be logged in."
+      redirect_to business_owner_login_path
+    end
+  end
 end

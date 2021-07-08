@@ -1,4 +1,5 @@
 class ClientsController < ApplicationController
+  before_action :require_login
 
   def new
     @client = Client.new
@@ -35,6 +36,13 @@ class ClientsController < ApplicationController
 
   def client_params
     params.require(:client).permit(:name, :phonenumber, :address)
+  end
+
+  def require_login
+    unless helpers.logged_in?
+      flash[:notice] = "You must be logged in."
+      redirect_to business_owner_login_path
+    end
   end
 
 end
