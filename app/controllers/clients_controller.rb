@@ -4,6 +4,16 @@ class ClientsController < ApplicationController
     @client = Client.new
   end
 
+  def index
+    # populate based on class method for search
+    @clients = Clients.search_for_clients(params[:search_for])
+
+  end
+
+  # unlock github
+  # get a new secret
+  # model logic in model
+
   def create
 
     @client = Client.new(client_params)
@@ -13,7 +23,7 @@ class ClientsController < ApplicationController
       flash[:notice] = "#{@client.name} was added as a new client."
       redirect_to clients_path
     else
-      render :new 
+      render :new
     end
   end
 
