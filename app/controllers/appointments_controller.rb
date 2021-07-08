@@ -10,7 +10,7 @@ class AppointmentsController < ApplicationController
       @appointment = @dog.appointments.build
     else
       # @clients = @cbo.clients.all
-      @dogs = Dog.all.select { |d| d.client.business_owner_id == @cbo.id}
+      @dogs = Dog.all.select { |d| d.client.business_owner_id == @cbo.id} #where?
       @appointment = Appointment.new
     end
   end
@@ -22,7 +22,7 @@ class AppointmentsController < ApplicationController
           flash[:notice] = "Appointment was added for #{@appointment.dog.name} on #{@appointment.display_datetime}."
           redirect_to appointments_path
         else
-          render :new 
+          render :new
         end
   end
 
